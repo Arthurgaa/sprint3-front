@@ -1,60 +1,106 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
 
-const NavContainer = styled.nav`
+function Nav() {
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.href = "https://fonts.googleapis.com/css2?family=Gruppo&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  }, []);
 
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+  const [isHovered, setIsHovered] = useState(false);
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #8c8c8c;  // Fundo cinza escuro
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-`;
-
-const NavLink = styled(Link)`
-    color: #ffffff;  // Texto branco
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-
-    &:hover {
-        background-color: #4444;  // Fundo cinza ao passar o mouse
-        border-radius: 14px;
+  const styles = {
+    navbar: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      backgroundColor: '#24252a',
+      padding: '10px 20px',
+      fontFamily: '"Gruppo", sans-serif',
+    },
+    logo: {
+      height: '80px',
+    },
+    navbarLinks: {
+      listStyle: 'none',
+      display: 'flex',
+      gap: '30px',
+    },
+    link: {
+      textDecoration: 'none',
+      color: '#ffffff',
+      fontSize: '18px',
+      letterSpacing: '2px',
+      transition: 'color 0.3s ease',
+    },
+    linkHover: {
+      color: '#b81d1a', // Cor no hover
+    },
+    loginButton: {
+      backgroundColor: '#ffffff',
+      color: '#111111',
+      border: 'none',
+      padding: '10px 20px',
+      borderRadius: '20px',
+      fontSize: '16px',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease, color 0.3s ease',
+      fontFamily: '"Gruppo", sans-serif',
+    },
+    loginButtonHover: {
+      backgroundColor: '#b81d1a', // Cor no hover
+      color: '#ffffff', // Mudança de cor no hover
     }
-`;
+  };
 
-const LogoutButton = styled.button`
-    background-color: #515151;  // Vermelho
-    color: #ffffff;  // Texto branco
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-
-    &:hover {
-        background-color: #3c3c3c;  // Vermelho mais claro ao passar o mouse
-    }
-`;
-
-const Nav = () => {
-    return (
-        <NavContainer>
-            <img src="/logo-img.png" alt="logo" width={100}/>
-            <NavLink to="/">Início</NavLink>
-            <NavLink to="/pilotos">Pilotos</NavLink>
-            <NavLink to="/sobre">Sobre</NavLink>
-            <NavLink to="/pergunta"><LogoutButton>Entrar</LogoutButton></NavLink>
-        </NavContainer>
-    );
+  return (
+    <nav style={styles.navbar}>
+      <div className="navbar-logo">
+        {/* Substituindo com a logo "logo-img.png" */}
+        <img src="/logo-img.png" alt="Logo" style={styles.logo} />
+      </div>
+      <ul style={styles.navbarLinks}>
+        <li>
+          <a
+            href="#"
+            style={styles.link}
+            onMouseEnter={(e) => e.target.style.color = styles.linkHover.color}
+            onMouseLeave={(e) => e.target.style.color = styles.link.color}
+          >
+            Início
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            style={styles.link}
+            onMouseEnter={(e) => e.target.style.color = styles.linkHover.color}
+            onMouseLeave={(e) => e.target.style.color = styles.link.color}
+          >
+            Pilotos
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            style={styles.link}
+            onMouseEnter={(e) => e.target.style.color = styles.linkHover.color}
+            onMouseLeave={(e) => e.target.style.color = styles.link.color}
+          >
+            Sobre
+          </a>
+        </li>
+      </ul>
+      <button
+        style={isHovered ? { ...styles.loginButton, ...styles.loginButtonHover } : styles.loginButton}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        Entrar
+      </button>
+    </nav>
+  );
 }
 
 export default Nav;
