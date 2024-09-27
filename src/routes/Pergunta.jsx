@@ -19,9 +19,10 @@ function Pergunta() {
   const styles = {
     container: {
       minHeight: '100vh', // Garante que a altura mínima do container seja 100% da viewport
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      display: 'grid', // Usando grid layout
+      gridTemplateColumns: '1fr', // Definindo uma coluna única
+      justifyItems: 'center', // Centraliza horizontalmente o conteúdo
+      alignItems: 'center', // Centraliza verticalmente o conteúdo
       backgroundImage: 'url(/carro5.jpg)', // Caminho para a imagem de fundo
       backgroundSize: 'cover', // Faz com que a imagem cubra toda a área disponível
       backgroundPosition: 'center', // Centraliza a imagem de fundo
@@ -30,12 +31,16 @@ function Pergunta() {
       padding: '0', // Remove padding
     },
     box: {
+      display: 'grid', // Usando grid layout para organizar a caixa
+      gridTemplateRows: 'auto auto auto', // Definindo três linhas: para o título e botões
+      gap: '20px', // Espaçamento entre os elementos
       backgroundColor: 'rgba(255, 255, 255, 0.5)', // Fundo semi-transparente
       padding: '40px 60px',
       borderRadius: '15px',
       textAlign: 'center',
       boxShadow: '0 8px 15px rgba(0, 0, 0, 0.3)',
       width: '300px', // Largura da caixa
+      justifyItems: 'center', // Centraliza os itens dentro da caixa
     },
     title: {
       fontSize: '24px',
@@ -48,7 +53,6 @@ function Pergunta() {
       width: '100%',
       padding: '10px',
       fontSize: '18px',
-      margin: '10px 0',
       border: 'none',
       borderRadius: '20px',
       cursor: 'pointer',

@@ -39,9 +39,8 @@ const Login = () => {
         container: {
             height: '100vh',
             width: '100vw',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            display: 'grid', // Usando CSS Grid
+            placeItems: 'center', // Centraliza horizontal e verticalmente
             backgroundImage: 'url(/carro3.jpg)', // Caminho para a imagem de fundo
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -50,17 +49,20 @@ const Login = () => {
             padding: '0',
         },
         box: {
+            display: 'grid', // Usando CSS Grid para organizar os elementos dentro da caixa
+            gridTemplateColumns: '1fr', // Definindo uma coluna principal
+            gap: '10px', // Reduzindo o espaçamento entre os elementos
             backgroundColor: 'rgba(255, 255, 255, 0.5)', // Fundo semi-transparente
-            padding: '40px 60px',
+            padding: '30px 40px', // Diminuindo o padding
             borderRadius: '15px',
             textAlign: 'center',
             boxShadow: '0 8px 15px rgba(0, 0, 0, 0.3)',
-            width: '320px', // Largura da caixa
+            width: '300px', // Largura da caixa
         },
         title: {
-            fontSize: '32px',
+            fontSize: '28px', // Diminuindo o tamanho do título
             fontWeight: 'bold',
-            marginBottom: '20px',
+            marginBottom: '10px', // Reduzindo a margem inferior
             color: '#b81d1a',
             fontFamily: '"Gruppo", sans-serif',
             position: 'relative',
@@ -76,16 +78,16 @@ const Login = () => {
         inputWrapper: {
             display: 'flex',
             alignItems: 'center',
-            marginBottom: '20px',
+            marginBottom: '15px', // Reduzindo o espaçamento entre inputs
             borderRadius: '20px',
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
-            padding: '10px 15px',
+            padding: '8px 12px', // Reduzindo o padding nos inputs
         },
         input: {
             flex: '1',
             border: 'none',
             outline: 'none',
-            fontSize: '16px',
+            fontSize: '14px', // Diminuindo a fonte dos inputs
             backgroundColor: 'transparent',
             color: '#ffffff',
             marginLeft: '10px',
@@ -97,7 +99,7 @@ const Login = () => {
             alignItems: 'center',
             color: '#b81d1a', // Alterei a cor do texto para vermelho
             fontSize: '14px',
-            marginBottom: '20px',
+            marginBottom: '10px', // Reduzindo o espaçamento entre o checkbox e o botão
         },
         checkbox: {
             display: 'flex',
@@ -110,8 +112,8 @@ const Login = () => {
             display: 'block', // Garantir que cada botão ocupe seu próprio espaço
             width: '100%', // Largura de 100% dentro do contêiner pai
             padding: '10px',
-            fontSize: '18px',
-            margin: '10px 0',
+            fontSize: '16px', // Diminuindo a fonte dos botões
+            margin: '8px 0', // Reduzindo o espaçamento entre os botões
             border: 'none',
             borderRadius: '20px',
             cursor: 'pointer',

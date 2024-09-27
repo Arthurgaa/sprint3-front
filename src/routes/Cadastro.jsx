@@ -53,7 +53,7 @@ const Cadastro = () => {
       borderRadius: "15px",
       textAlign: "center",
       boxShadow: "0 8px 15px rgba(0, 0, 0, 0.3)",
-      width: "500px", // Largura da caixa
+      width: "500px",
     },
     title: {
       fontSize: "36px", // Aumentei o tamanho do título
@@ -72,40 +72,29 @@ const Cadastro = () => {
       left: "0",
     },
     inputWrapper: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "10px",
+      display: "grid", // Tornando um container de grid
+      gridTemplateColumns: "1fr 1fr", // Definindo duas colunas de igual tamanho
+      gap: "10px", // Espaçamento entre os itens
       marginBottom: "20px",
-      alignItems: "center", // Centraliza o conteúdo
-    },
-    inputRow: {
-      display: "flex",
-      justifyContent: "center", // Centraliza as colunas
-      gap: "10px",
-      width: "100%", // Faz os inputs ocuparem 100% do contêiner
+      width: "100%",
     },
     input: {
-      flex: "1",
       border: "none",
       outline: "none",
       fontSize: "16px",
       padding: "10px",
-      backgroundColor: "rgba(255, 255, 255, 0.5)",
+      backgroundColor: "rgba(255, 255, 255, 0.3)",
       color: "#ffffff",
       borderRadius: "20px",
       fontFamily: '"Gruppo", sans-serif',
-      maxWidth: "100%", // Garante que os inputs não ultrapassem o limite do contêiner
+      width: "100%",
     },
     radioGroup: {
       display: "flex",
       justifyContent: "space-around",
       alignItems: "center",
       marginBottom: "20px",
-      color: "#b81d1a", // Alterei a cor para vermelho
-    },
-    radioInput: {
-      marginLeft: "5px",
-      marginRight: "5px",
+      color: "#b81d1a",
     },
     button: {
       width: "100%",
@@ -141,60 +130,54 @@ const Cadastro = () => {
         </h1>
         <form onSubmit={handleSubmit}>
           <div style={styles.inputWrapper}>
-            <div style={styles.inputRow}>
-              <input
-                type="text"
-                name="nome"
-                placeholder="Nome"
-                value={formData.nome}
-                onChange={handleChange}
-                style={styles.input}
-              />
-              <input
-                type="text"
-                name="sobrenome"
-                placeholder="Sobrenome"
-                value={formData.sobrenome}
-                onChange={handleChange}
-                style={styles.input}
-              />
-            </div>
-            <div style={styles.inputRow}>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                style={styles.input}
-              />
-              <input
-                type="text"
-                name="telefone"
-                placeholder="Número de Telefone"
-                value={formData.telefone}
-                onChange={handleChange}
-                style={styles.input}
-              />
-            </div>
-            <div style={styles.inputRow}>
-              <input
-                type="password"
-                name="senha"
-                placeholder="Senha"
-                value={formData.senha}
-                onChange={handleChange}
-                style={styles.input}
-              />
-              <input
-                type="password"
-                name="confirmarSenha"
-                placeholder="Confirmar senha"
-                value={formData.confirmarSenha}
-                onChange={handleChange}
-                style={styles.input}
-              />
-            </div>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome"
+              value={formData.nome}
+              onChange={handleChange}
+              style={styles.input}
+            />
+            <input
+              type="text"
+              name="sobrenome"
+              placeholder="Sobrenome"
+              value={formData.sobrenome}
+              onChange={handleChange}
+              style={styles.input}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              style={styles.input}
+            />
+            <input
+              type="text"
+              name="telefone"
+              placeholder="Número de Telefone"
+              value={formData.telefone}
+              onChange={handleChange}
+              style={styles.input}
+            />
+            <input
+              type="password"
+              name="senha"
+              placeholder="Senha"
+              value={formData.senha}
+              onChange={handleChange}
+              style={styles.input}
+            />
+            <input
+              type="password"
+              name="confirmarSenha"
+              placeholder="Confirmar senha"
+              value={formData.confirmarSenha}
+              onChange={handleChange}
+              style={styles.input}
+            />
           </div>
 
           <div style={styles.radioGroup}>
@@ -205,8 +188,6 @@ const Cadastro = () => {
                 name="genero"
                 value="Homem"
                 onChange={handleChange}
-                className="radio-input"
-                style={styles.radioInput}
               />{" "}
               Homem
             </label>
@@ -216,8 +197,6 @@ const Cadastro = () => {
                 name="genero"
                 value="Mulher"
                 onChange={handleChange}
-                className="radio-input"
-                style={styles.radioInput}
               />{" "}
               Mulher
             </label>
@@ -227,8 +206,6 @@ const Cadastro = () => {
                 name="genero"
                 value="Outro"
                 onChange={handleChange}
-                className="radio-input"
-                style={styles.radioInput}
               />{" "}
               Outro
             </label>

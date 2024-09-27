@@ -29,6 +29,9 @@ function Home() {
 
   const styles = {
     container: {
+      display: 'grid', // Definindo grid layout
+      gridTemplateColumns: '1fr', // Uma coluna principal que ocupa toda a largura
+      gap: '40px', // Espaçamento entre as seções
       width: '100%',
       margin: '0 auto',
       fontFamily: '"Gruppo", sans-serif',
@@ -36,7 +39,7 @@ function Home() {
     },
     section: {
       padding: '20px',
-      textAlign: 'left',
+      textAlign: 'left', // Mantém o texto alinhado à esquerda
       color: '#333',
     },
     title: {
@@ -46,22 +49,10 @@ function Home() {
       marginBottom: '20px',
       textAlign: 'center',
     },
-    subtitle: {
-      fontSize: '26px',
-      fontWeight: 'bold',
-      marginBottom: '10px',
-      color: '#b81d1a',
-    },
-    text: {
-      fontSize: '18px',
-      lineHeight: '1.7',
-      color: '#333',
-      fontWeight: '500',
-    },
     pilots: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      display: 'grid', // Usando grid layout para a seção de pilotos
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', // Pilotos organizados em colunas flexíveis
+      gap: '20px', // Espaçamento entre as colunas
       padding: '20px',
       border: '1px solid #ddd',
     },
@@ -72,7 +63,6 @@ function Home() {
       border: '1px solid #ddd',
       padding: '20px',
       borderRadius: '5px',
-      width: '45%',
     },
     pilotImage: {
       height: '300px',
@@ -88,55 +78,35 @@ function Home() {
       width: '100%',
     },
     aboutSection: {
-      border: '1px solid #ddd',
+      display: 'grid',
+      gridTemplateColumns: '1fr', // Seção de sobre dividida em uma coluna completa
+      gap: '20px',
       padding: '30px',
-      marginTop: '40px',
       backgroundColor: '#f9f9f9',
       borderRadius: '8px',
+      border: '1px solid #ddd',
+      width: '90%', // Ocupa 90% da largura
+      maxWidth: '1200px', // Limita a largura máxima da seção
+      margin: '0 auto', // Centraliza a seção horizontalmente
+      justifyContent: 'center', // Centraliza o conteúdo dentro da grid
     },
     aboutTitle: {
-      fontSize: '30px',
+      fontSize: '35px',
       color: '#b81d1a',
       marginBottom: '10px',
-      textAlign: 'center',
-    },
-    aboutContent: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '20px',
+      textAlign: 'center', // Centraliza o título
+      gridColumn: 'span 1', // Mantém o título ocupando a coluna
     },
     aboutText: {
-      flex: '1',
-      fontSize: '18px',
-      lineHeight: '1.7',
-      padding: '15px',
       backgroundColor: '#ffffff',
+      padding: '20px',
       borderRadius: '8px',
       boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
       position: 'relative',
       overflow: 'hidden',
+      fontSize: '18px',
       fontWeight: '500',
-    },
-    aboutSubtitle: {
-      fontSize: '24px',
-      fontWeight: 'bold',
-      color: '#b81d1a',
-      marginBottom: '10px',
-    },
-    aboutIcon: {
-      fontSize: '30px',
-      color: '#b81d1a',
-      position: 'absolute',
-      top: '10px',
-      right: '10px',
-      opacity: '0.2',
-    },
-    divider: {
-      width: '100%',
-      height: '2px',
-      backgroundColor: '#b81d1a',
-      margin: '30px 0',
-      opacity: '0.3',
+      width: '100%', // Garante que os textos ocupem 100% dentro da grid
     },
     slideshowContainer: {
       position: 'relative',
@@ -185,12 +155,8 @@ function Home() {
     containerHover: {
       opacity: '1',
     },
-    image: {
-      width: '100%',
-      height: '100%',
-    },
   };
-
+  
   return (
     <div style={styles.container}>
       {/* Slideshow */}
@@ -258,6 +224,9 @@ function Home() {
             Mahindra Racing é uma equipe de automobilismo indiana de propriedade da fabricante de automóveis indiana Mahindra & Mahindra. Foi o primeiro construtor da Índia a participar no Campeonato do Mundo FIM MotoGP em 2011, no CIV (Campeonato Nacional Italiano de Motociclismo) em 2012 e no Campeonato Internacional FIM CEV em 2013. Em 2014, a Mahindra Racing também se tornou uma das dez fundadoras e a única equipe indiana a competir no Campeonato de Fórmula E da FIA.
             </p>
           </div>
+
+          <hr />
+
           <div style={styles.divider}></div>
           <div style={styles.aboutText}>
             <h3 style={styles.aboutSubtitle}>Tech Mahindra</h3>
@@ -266,6 +235,9 @@ function Home() {
             Tech Mahindra é uma empresa multinacional indiana de consultoria e serviços de tecnologia da informação. Parte do Grupo Mahindra, a empresa está sediada em Pune e tem sede em Mumbai. A Tech Mahindra tem mais de 146.000 funcionários em 90 países. A empresa foi classificada em 5º lugar nas empresas de TI da Índia e em 47º lugar geral na lista Fortune India 500 em 2019. Em 25 de junho de 2013, a Tech Mahindra anunciou a conclusão de uma fusão com a Mahindra Satyam. A Tech Mahindra é uma das principais empresas de Big Tech (Índia). A Tech Mahindra tinha 1.262 clientes ativos em junho de 2022.
             </p>
           </div>
+
+          <hr />
+
           <div style={styles.divider}></div>
           <div style={styles.aboutText}>
             <h3 style={styles.aboutSubtitle}>História</h3>
@@ -274,6 +246,9 @@ function Home() {
             A Mahindra & Mahindra iniciou uma joint venture com a British Telecom em 1986 como uma empresa de terceirização de tecnologia. Naquela época, a empresa se chamava Mahindra British Telecom (MBT). Mais tarde foi renomeado como Tech Mahindra. A British Telecom inicialmente tinha cerca de 30% de participação na Tech Mahindra. Em dezembro de 2010, a British Telecom vendeu 5,5% de sua participação na Tech Mahindra para a Mahindra & Mahindra por Rs. 451 milhões. Em agosto de 2012, a British Telecom vendeu 14,1% de sua participação a investidores institucionais por cerca de Rs. 1.395 milhões. Em dezembro de 2012, a British Telecom vendeu a sua participação restante de 9,1 por cento (11,6 milhões de ações) a investidores institucionais por um produto bruto total em dinheiro de Rs. 1.011,4 milhões. Esta venda marcou a saída da British Telecom da Tech Mahindra.
             </p>
           </div>
+
+          <hr />
+
           <div style={styles.divider}></div>
           <div style={styles.aboutText}>
             <h3 style={styles.aboutSubtitle}>Aquisição da Satyam Computer Services Ltd.</h3>
@@ -282,6 +257,9 @@ function Home() {
             Após o escândalo Satyam de 2008-09, a Tech Mahindra fez uma oferta pela Satyam Computer Services e emergiu como a principal licitante com uma oferta de INR 58,90 por ação por uma participação de 31 por cento na empresa, derrotando um forte rival, Larsen & Toubro. Depois de avaliar as propostas, o conselho nomeado pelo governo da Satyam Computer anunciou em 13 de abril de 2009: "seu Conselho de Administração selecionou a Venturbay Consultants Private Limited, uma subsidiária controlada pela Tech Mahindra Limited, como o licitante com lance mais alto para adquirir o controle acionário da da Empresa, sujeito à aprovação do Hon'ble Company Law Board."
             </p>
           </div>
+
+          <hr />
+
           <div style={styles.divider}></div>
           <div style={styles.aboutText}>
             <h3 style={styles.aboutSubtitle}>Fusão com a Mahindra Satyam</h3>
@@ -290,6 +268,9 @@ function Home() {
             A Tech Mahindra anunciou sua fusão com a Mahindra Satyam em 21 de março de 2012, após obter a aprovação dos conselhos das duas empresas para criar uma empresa de TI no valor de US$ 2,5 bilhões.  A Tech Mahindra registrou lucro líquido de INR 686 milhões no primeiro trimestre encerrado em 30 de junho de 2013, um aumento de 27% em comparação com o trimestre correspondente do ano anterior.
             </p>
           </div>
+
+          <hr />
+
           <div style={styles.divider}></div>
           <div style={styles.aboutText}>
             <h3 style={styles.aboutSubtitle}>Anos depois</h3>
