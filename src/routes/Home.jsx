@@ -40,23 +40,23 @@ function Home() {
       color: '#333',
     },
     title: {
-      fontSize: '36px', // Aumentei o tamanho da fonte do título
+      fontSize: '36px',
       fontWeight: 'bold',
       color: '#b81d1a',
       marginBottom: '20px',
       textAlign: 'center',
     },
     subtitle: {
-      fontSize: '26px', // Aumentei o tamanho da fonte do subtítulo
+      fontSize: '26px',
       fontWeight: 'bold',
       marginBottom: '10px',
       color: '#b81d1a',
     },
     text: {
-      fontSize: '18px', // Aumentei o tamanho da fonte do texto
-      lineHeight: '1.7', // Um pouco mais de espaçamento entre linhas
+      fontSize: '18px',
+      lineHeight: '1.7',
       color: '#333',
-      fontWeight: '500', // Deixei a fonte um pouco mais grossa
+      fontWeight: '500',
     },
     pilots: {
       display: 'flex',
@@ -95,7 +95,7 @@ function Home() {
       borderRadius: '8px',
     },
     aboutTitle: {
-      fontSize: '30px', // Aumentei o tamanho do título da seção "Sobre"
+      fontSize: '30px',
       color: '#b81d1a',
       marginBottom: '10px',
       textAlign: 'center',
@@ -107,18 +107,18 @@ function Home() {
     },
     aboutText: {
       flex: '1',
-      fontSize: '18px', // Aumentei o tamanho do texto
-      lineHeight: '1.7', // Mais espaçamento entre linhas
+      fontSize: '18px',
+      lineHeight: '1.7',
       padding: '15px',
       backgroundColor: '#ffffff',
       borderRadius: '8px',
       boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
       position: 'relative',
       overflow: 'hidden',
-      fontWeight: '500', // Fonte mais grossa
+      fontWeight: '500',
     },
     aboutSubtitle: {
-      fontSize: '24px', // Aumentei o tamanho do subtítulo
+      fontSize: '24px',
       fontWeight: 'bold',
       color: '#b81d1a',
       marginBottom: '10px',
@@ -136,13 +136,14 @@ function Home() {
       height: '2px',
       backgroundColor: '#b81d1a',
       margin: '30px 0',
-      opacity: '0.3', // Diminuí a opacidade das linhas divisórias
+      opacity: '0.3',
     },
     slideshowContainer: {
       position: 'relative',
       width: '100%',
-      height: '500px',
+      height: '100vh', // O slideshow agora ocupa toda a altura da janela
       overflow: 'hidden',
+      boxShadow: '0 20px 20px -10px rgba(0, 0, 0, 0.3)', // Sombra na parte inferior
     },
     slide: {
       width: '100%',
