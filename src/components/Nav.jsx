@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll'; // Importa o componente Link de react-scroll
+import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
 
 function Nav() {
-  // Estado para o hover
   const [hoverIndex, setHoverIndex] = useState(null);
-  const [isButtonHovered, setIsButtonHovered] = useState(false); // Estado para hover do botão
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
+  const navigate = useNavigate(); // Função de navegação do react-router-dom
+
+  const handleEntrarClick = () => {
+    navigate('/pergunta'); // Redireciona para a página da pergunta
+  };
 
   const styles = {
     navbar: {
@@ -52,27 +57,27 @@ function Nav() {
       <ul style={styles.navbarLinks}>
         <li>
           <Link
-            to="inicio" // Referencia o id da seção
-            smooth={true} // Rolar suavemente
-            duration={500} // Duração da rolagem (500ms)
+            to="inicio"
+            smooth={true}
+            duration={500}
             style={{
               ...styles.link,
-              color: hoverIndex === 0 ? '#b81d1a' : '#ffffff', // Hover para o primeiro item
+              color: hoverIndex === 0 ? '#b81d1a' : '#ffffff', 
             }}
-            onMouseEnter={() => setHoverIndex(0)} // Detecta hover
-            onMouseLeave={() => setHoverIndex(null)} // Remove hover
+            onMouseEnter={() => setHoverIndex(0)} 
+            onMouseLeave={() => setHoverIndex(null)} 
           >
             Início
           </Link>
         </li>
         <li>
           <Link
-            to="pilotos" // Referencia o id da seção
+            to="pilotos"
             smooth={true}
             duration={500}
             style={{
               ...styles.link,
-              color: hoverIndex === 1 ? '#b81d1a' : '#ffffff', // Hover para o segundo item
+              color: hoverIndex === 1 ? '#b81d1a' : '#ffffff', 
             }}
             onMouseEnter={() => setHoverIndex(1)}
             onMouseLeave={() => setHoverIndex(null)}
@@ -82,12 +87,12 @@ function Nav() {
         </li>
         <li>
           <Link
-            to="sobre" // Referencia o id da seção
+            to="sobre"
             smooth={true}
             duration={500}
             style={{
               ...styles.link,
-              color: hoverIndex === 2 ? '#b81d1a' : '#ffffff', // Hover para o terceiro item
+              color: hoverIndex === 2 ? '#b81d1a' : '#ffffff', 
             }}
             onMouseEnter={() => setHoverIndex(2)}
             onMouseLeave={() => setHoverIndex(null)}
@@ -98,8 +103,9 @@ function Nav() {
       </ul>
       <button
         style={styles.loginButton}
-        onMouseEnter={() => setIsButtonHovered(true)} // Detecta hover no botão
-        onMouseLeave={() => setIsButtonHovered(false)} // Remove hover do botão
+        onMouseEnter={() => setIsButtonHovered(true)}
+        onMouseLeave={() => setIsButtonHovered(false)}
+        onClick={handleEntrarClick} // Redireciona para a página Pergunta
       >
         Entrar
       </button>

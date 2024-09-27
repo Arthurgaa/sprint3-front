@@ -1,0 +1,48 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Definições universais */
+  body, html {
+    height: 100%;
+    font-family: 'Gruppo', sans-serif;
+    background-color: #f4f4f4;
+    color: #111;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Títulos */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #b81d1a;
+  }
+  
+  /* Parágrafos */
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  /* Exemplo para botões */
+  button {
+    cursor: pointer;
+    font-family: 'Gruppo', sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  

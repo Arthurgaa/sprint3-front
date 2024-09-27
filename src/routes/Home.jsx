@@ -255,7 +255,7 @@ function Home() {
             <h3 style={styles.aboutSubtitle}>Mahindra Racing</h3>
             <i className="fas fa-flag-checkered" style={styles.aboutIcon}></i>
             <p>
-              Mahindra Racing é uma equipe de automobilismo indiana de propriedade da fabricante de automóveis indiana Mahindra & Mahindra...
+            Mahindra Racing é uma equipe de automobilismo indiana de propriedade da fabricante de automóveis indiana Mahindra & Mahindra. Foi o primeiro construtor da Índia a participar no Campeonato do Mundo FIM MotoGP em 2011, no CIV (Campeonato Nacional Italiano de Motociclismo) em 2012 e no Campeonato Internacional FIM CEV em 2013. Em 2014, a Mahindra Racing também se tornou uma das dez fundadoras e a única equipe indiana a competir no Campeonato de Fórmula E da FIA.
             </p>
           </div>
           <div style={styles.divider}></div>
@@ -263,7 +263,7 @@ function Home() {
             <h3 style={styles.aboutSubtitle}>Tech Mahindra</h3>
             <i className="fas fa-laptop" style={styles.aboutIcon}></i>
             <p>
-              Tech Mahindra é uma empresa multinacional indiana de consultoria e serviços de tecnologia da informação...
+            Tech Mahindra é uma empresa multinacional indiana de consultoria e serviços de tecnologia da informação. Parte do Grupo Mahindra, a empresa está sediada em Pune e tem sede em Mumbai. A Tech Mahindra tem mais de 146.000 funcionários em 90 países. A empresa foi classificada em 5º lugar nas empresas de TI da Índia e em 47º lugar geral na lista Fortune India 500 em 2019. Em 25 de junho de 2013, a Tech Mahindra anunciou a conclusão de uma fusão com a Mahindra Satyam. A Tech Mahindra é uma das principais empresas de Big Tech (Índia). A Tech Mahindra tinha 1.262 clientes ativos em junho de 2022.
             </p>
           </div>
           <div style={styles.divider}></div>
@@ -271,7 +271,7 @@ function Home() {
             <h3 style={styles.aboutSubtitle}>História</h3>
             <i className="fas fa-history" style={styles.aboutIcon}></i>
             <p>
-              A Mahindra & Mahindra iniciou uma joint venture com a British Telecom em 1986 como uma empresa de terceirização de tecnologia...
+            A Mahindra & Mahindra iniciou uma joint venture com a British Telecom em 1986 como uma empresa de terceirização de tecnologia. Naquela época, a empresa se chamava Mahindra British Telecom (MBT). Mais tarde foi renomeado como Tech Mahindra. A British Telecom inicialmente tinha cerca de 30% de participação na Tech Mahindra. Em dezembro de 2010, a British Telecom vendeu 5,5% de sua participação na Tech Mahindra para a Mahindra & Mahindra por Rs. 451 milhões. Em agosto de 2012, a British Telecom vendeu 14,1% de sua participação a investidores institucionais por cerca de Rs. 1.395 milhões. Em dezembro de 2012, a British Telecom vendeu a sua participação restante de 9,1 por cento (11,6 milhões de ações) a investidores institucionais por um produto bruto total em dinheiro de Rs. 1.011,4 milhões. Esta venda marcou a saída da British Telecom da Tech Mahindra.
             </p>
           </div>
           <div style={styles.divider}></div>
@@ -279,15 +279,23 @@ function Home() {
             <h3 style={styles.aboutSubtitle}>Aquisição da Satyam Computer Services Ltd.</h3>
             <i className="fas fa-handshake" style={styles.aboutIcon}></i>
             <p>
-              Após o escândalo Satyam de 2008-09, a Tech Mahindra fez uma oferta pela Satyam Computer Services...
+            Após o escândalo Satyam de 2008-09, a Tech Mahindra fez uma oferta pela Satyam Computer Services e emergiu como a principal licitante com uma oferta de INR 58,90 por ação por uma participação de 31 por cento na empresa, derrotando um forte rival, Larsen & Toubro. Depois de avaliar as propostas, o conselho nomeado pelo governo da Satyam Computer anunciou em 13 de abril de 2009: "seu Conselho de Administração selecionou a Venturbay Consultants Private Limited, uma subsidiária controlada pela Tech Mahindra Limited, como o licitante com lance mais alto para adquirir o controle acionário da da Empresa, sujeito à aprovação do Hon'ble Company Law Board."
             </p>
           </div>
           <div style={styles.divider}></div>
           <div style={styles.aboutText}>
-            <h3 style={styles.aboutSubtitle}>Aquisições Recentes</h3>
+            <h3 style={styles.aboutSubtitle}>Fusão com a Mahindra Satyam</h3>
             <i className="fas fa-globe" style={styles.aboutIcon}></i>
             <p>
-              Em 2014, a Tech Mahindra adquiriu a Lightbridge Communications Corporation (LCC)...
+            A Tech Mahindra anunciou sua fusão com a Mahindra Satyam em 21 de março de 2012, após obter a aprovação dos conselhos das duas empresas para criar uma empresa de TI no valor de US$ 2,5 bilhões.  A Tech Mahindra registrou lucro líquido de INR 686 milhões no primeiro trimestre encerrado em 30 de junho de 2013, um aumento de 27% em comparação com o trimestre correspondente do ano anterior.
+            </p>
+          </div>
+          <div style={styles.divider}></div>
+          <div style={styles.aboutText}>
+            <h3 style={styles.aboutSubtitle}>Anos depois</h3>
+            <i className="fas fa-handshake" style={styles.aboutIcon}></i>
+            <p>
+            Em 2014, a Tech Mahindra adquiriu a Lightbridge Communications Corporation (LCC), uma empresa de serviços de telecomunicações que opera em mais de 50 países. Em 2015, a Tech Mahindra adquiriu a SOFGEN Holdings, uma empresa suíça de TI com 450 funcionários que fornece o setor de serviços financeiros. A Tech Mahindra adquiriu o controle acionário da Pininfarina S.p.A., uma marca italiana de design automotivo e industrial. A Tech Mahindra anunciou o lançamento de seu Automation Framework AQT ( Automação, Qualidade, Tempo) Em março de 2016, o lucro pós-impostos da Tech Mahindra ultrapassou o da M&M.
             </p>
           </div>
         </div>
