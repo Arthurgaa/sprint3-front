@@ -1,31 +1,33 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
+import { useNavigate } from 'react-router-dom';
 
 function Pergunta() {
-  const navigate = useNavigate(); // Função para navegação
+  const navigate = useNavigate();
 
   const handleSimClick = () => {
-    navigate('/login'); // Navega para a página de login
+    navigate('/login');
   };
 
   const handleNaoClick = () => {
-    navigate('/cadastro'); // Navega para a página de cadastro
+    navigate('/cadastro');
   };
 
   const handleHomeClick = () => {
-    navigate('/'); // Navega para a página inicial
+    navigate('/');
   };
 
   const styles = {
     container: {
-      height: '100vh',
+      minHeight: '100vh', // Garante que a altura mínima do container seja 100% da viewport
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       backgroundImage: 'url(/carro5.jpg)', // Caminho para a imagem de fundo
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      position: 'relative',
+      backgroundSize: 'cover', // Faz com que a imagem cubra toda a área disponível
+      backgroundPosition: 'center', // Centraliza a imagem de fundo
+      backgroundRepeat: 'no-repeat', // Evita repetição da imagem
+      margin: '0', // Remove margens
+      padding: '0', // Remove padding
     },
     box: {
       backgroundColor: 'rgba(255, 255, 255, 0.5)', // Fundo semi-transparente
@@ -68,10 +70,6 @@ function Pergunta() {
       color: '#ffffff',
       border: 'none',
     },
-    buttonHover: {
-      backgroundColor: '#b81d1a',
-      color: '#ffffff',
-    },
   };
 
   return (
@@ -83,11 +81,11 @@ function Pergunta() {
           onClick={handleSimClick}
           onMouseOver={(e) => {
             e.currentTarget.style.backgroundColor = '#b81d1a';
-            e.currentTarget.style.color = '#ffffff'; // Altera a cor do texto para branco
+            e.currentTarget.style.color = '#ffffff';
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.backgroundColor = '#ffffff';
-            e.currentTarget.style.color = '#b81d1a'; // Retorna a cor original do texto
+            e.currentTarget.style.color = '#b81d1a';
           }}
         >
           Sim
@@ -97,11 +95,11 @@ function Pergunta() {
           onClick={handleNaoClick}
           onMouseOver={(e) => {
             e.currentTarget.style.backgroundColor = '#b81d1a';
-            e.currentTarget.style.color = '#ffffff'; // Altera a cor do texto para branco
+            e.currentTarget.style.color = '#ffffff';
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.backgroundColor = '#ffffff';
-            e.currentTarget.style.color = '#b81d1a'; // Retorna a cor original do texto
+            e.currentTarget.style.color = '#b81d1a';
           }}
         >
           Não
