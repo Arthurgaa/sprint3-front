@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-scroll'; // Importa o componente Link de react-scroll
 
 function Nav() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = "https://fonts.googleapis.com/css2?family=Gruppo&display=swap";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-  }, []);
-
-  const [isHovered, setIsHovered] = useState(false);
-
   const styles = {
     navbar: {
       display: 'flex',
@@ -32,10 +24,7 @@ function Nav() {
       color: '#ffffff',
       fontSize: '18px',
       letterSpacing: '2px',
-      transition: 'color 0.3s ease',
-    },
-    linkHover: {
-      color: '#b81d1a', // Cor no hover
+      cursor: 'pointer',
     },
     loginButton: {
       backgroundColor: '#ffffff',
@@ -45,58 +34,50 @@ function Nav() {
       borderRadius: '20px',
       fontSize: '16px',
       cursor: 'pointer',
-      transition: 'background-color 0.3s ease, color 0.3s ease',
+      transition: 'background-color 0.3s ease',
       fontFamily: '"Gruppo", sans-serif',
-    },
-    loginButtonHover: {
-      backgroundColor: '#b81d1a', // Cor no hover
-      color: '#ffffff', // Mudança de cor no hover
     }
   };
 
   return (
     <nav style={styles.navbar}>
       <div className="navbar-logo">
-        {/* Substituindo com a logo "logo-img.png" */}
         <img src="/logo-img.png" alt="Logo" style={styles.logo} />
       </div>
       <ul style={styles.navbarLinks}>
+        {/* Usando o Link do react-scroll para navegação suave */}
         <li>
-          <a
-            href="#"
+          <Link
+            to="inicio" // Referencia o id da seção
+            smooth={true} // Rolar suavemente
+            duration={500} // Duração da rolagem (500ms)
             style={styles.link}
-            onMouseEnter={(e) => e.target.style.color = styles.linkHover.color}
-            onMouseLeave={(e) => e.target.style.color = styles.link.color}
           >
             Início
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="pilotos" // Referencia o id da seção
+            smooth={true}
+            duration={500}
             style={styles.link}
-            onMouseEnter={(e) => e.target.style.color = styles.linkHover.color}
-            onMouseLeave={(e) => e.target.style.color = styles.link.color}
           >
             Pilotos
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="sobre" // Referencia o id da seção
+            smooth={true}
+            duration={500}
             style={styles.link}
-            onMouseEnter={(e) => e.target.style.color = styles.linkHover.color}
-            onMouseLeave={(e) => e.target.style.color = styles.link.color}
           >
             Sobre
-          </a>
+          </Link>
         </li>
       </ul>
-      <button
-        style={isHovered ? { ...styles.loginButton, ...styles.loginButtonHover } : styles.loginButton}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <button style={styles.loginButton}>
         Entrar
       </button>
     </nav>
