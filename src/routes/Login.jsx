@@ -78,7 +78,7 @@ const Login = () => {
             alignItems: 'center',
             marginBottom: '20px',
             borderRadius: '20px',
-            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
             padding: '10px 15px',
         },
         input: {
