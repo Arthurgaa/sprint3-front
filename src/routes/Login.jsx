@@ -42,7 +42,7 @@ const Login = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundImage: 'url(/carro5.jpg)', // Caminho para a imagem de fundo
+            backgroundImage: 'url(/carro3.jpg)', // Caminho para a imagem de fundo
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
