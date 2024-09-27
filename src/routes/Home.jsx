@@ -5,7 +5,7 @@ function Home() {
     '/mahindra-banner.jpg',
     '/mahindra-banner2.jpg',
     '/mahindra-banner3.jpg',
-    '/mahindra-banner4.jpg'
+    '/mahindra-banner4.jpg',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,9 +29,9 @@ function Home() {
 
   const styles = {
     container: {
-      display: 'grid', // Definindo grid layout
-      gridTemplateColumns: '1fr', // Uma coluna principal que ocupa toda a largura
-      gap: '40px', // Espaçamento entre as seções
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      gap: '40px',
       width: '100%',
       margin: '0 auto',
       fontFamily: '"Gruppo", sans-serif',
@@ -39,7 +39,7 @@ function Home() {
     },
     section: {
       padding: '20px',
-      textAlign: 'left', // Mantém o texto alinhado à esquerda
+      textAlign: 'left',
       color: '#333',
     },
     title: {
@@ -50,9 +50,9 @@ function Home() {
       textAlign: 'center',
     },
     pilots: {
-      display: 'grid', // Usando grid layout para a seção de pilotos
-      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', // Pilotos organizados em colunas flexíveis
-      gap: '20px', // Espaçamento entre as colunas
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gap: '20px',
       padding: '20px',
       border: '1px solid #ddd',
     },
@@ -79,41 +79,38 @@ function Home() {
     },
     aboutSection: {
       display: 'grid',
-      gridTemplateColumns: '1fr', // Seção de sobre dividida em uma coluna completa
+      gridTemplateColumns: '1fr',
       gap: '20px',
       padding: '30px',
       backgroundColor: '#f9f9f9',
       borderRadius: '8px',
       border: '1px solid #ddd',
-      width: '90%', // Ocupa 90% da largura
-      maxWidth: '1200px', // Limita a largura máxima da seção
-      margin: '0 auto', // Centraliza a seção horizontalmente
-      justifyContent: 'center', // Centraliza o conteúdo dentro da grid
+      width: '90%',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      justifyContent: 'center',
     },
     aboutTitle: {
       fontSize: '35px',
       color: '#b81d1a',
       marginBottom: '10px',
-      textAlign: 'center', // Centraliza o título
-      gridColumn: 'span 1', // Mantém o título ocupando a coluna
+      textAlign: 'center',
     },
     aboutText: {
       backgroundColor: '#ffffff',
       padding: '20px',
       borderRadius: '8px',
       boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-      position: 'relative',
-      overflow: 'hidden',
       fontSize: '18px',
       fontWeight: '500',
-      width: '100%', // Garante que os textos ocupem 100% dentro da grid
+      width: '100%',
     },
     slideshowContainer: {
       position: 'relative',
       width: '100%',
-      height: '100vh', // O slideshow agora ocupa toda a altura da janela
+      height: '100vh',
       overflow: 'hidden',
-      boxShadow: '0 20px 20px -10px rgba(0, 0, 0, 0.3)', // Sombra na parte inferior
+      boxShadow: '0 20px 20px -10px rgba(0, 0, 0, 0.3)',
     },
     slide: {
       width: '100%',
@@ -152,11 +149,8 @@ function Home() {
       opacity: '0',
       transition: 'opacity 0.3s ease, background-color 0.3s ease',
     },
-    containerHover: {
-      opacity: '1',
-    },
   };
-  
+
   return (
     <div style={styles.container}>
       {/* Slideshow */}

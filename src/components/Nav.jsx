@@ -52,19 +52,67 @@ function Nav() {
       transition: 'background-color 0.3s ease, color 0.3s ease',
       fontFamily: '"Gruppo", sans-serif',
     },
+    // Responsividade para Mobile
+    mobile: {
+      navbar: {
+        flexDirection: 'column',
+        padding: '10px',
+      },
+      navbarLinks: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '10px',
+      },
+      logo: {
+        height: '60px',
+      },
+      loginButton: {
+        width: '100%',
+        marginTop: '10px',
+      },
+    },
+    // Responsividade para Tablet
+    tablet: {
+      navbarLinks: {
+        gap: '20px',
+      },
+      logo: {
+        height: '70px',
+      },
+    },
+    // Responsividade para Desktop
+    desktop: {
+      navbarLinks: {
+        gap: '30px',
+      },
+      logo: {
+        height: '80px',
+      },
+    },
   };
 
+  // Definir largura da tela
+  const screenWidth = window.innerWidth;
+
+  // Aplicar estilos responsivos
+  let responsiveStyles = styles.desktop;
+  if (screenWidth <= 600) {
+    responsiveStyles = styles.mobile;
+  } else if (screenWidth <= 900) {
+    responsiveStyles = styles.tablet;
+  }
+
   return (
-    <nav style={styles.navbar}>
+    <nav style={{ ...styles.navbar, ...responsiveStyles.navbar }}>
       <div className="navbar-logo">
         <img
           src="/logo-img.png"
           alt="Logo"
-          style={styles.logo}
+          style={{ ...styles.logo, ...responsiveStyles.logo }}
           onClick={() => handleNavigation('inicio')} // Navega para a seção "Início"
         />
       </div>
-      <ul style={styles.navbarLinks}>
+      <ul style={{ ...styles.navbarLinks, ...responsiveStyles.navbarLinks }}>
         <li>
           <span
             style={{
@@ -106,7 +154,7 @@ function Nav() {
         </li>
       </ul>
       <button
-        style={styles.loginButton}
+        style={{ ...styles.loginButton, ...responsiveStyles.loginButton }}
         onMouseEnter={() => setIsButtonHovered(true)}
         onMouseLeave={() => setIsButtonHovered(false)}
         onClick={handleEntrarClick} // Redireciona para a página Pergunta

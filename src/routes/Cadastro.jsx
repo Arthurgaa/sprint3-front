@@ -24,9 +24,8 @@ const Cadastro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui pode ser adicionada a lógica de envio dos dados de cadastro.
     alert("Cadastro realizado com sucesso!");
-    navigate("/dashboard"); // Redireciona para o dashboard após cadastro
+    navigate("/dashboard");
   };
 
   const handleHomeClick = () => {
@@ -40,7 +39,7 @@ const Cadastro = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      backgroundImage: 'url(/carro4.jpg)', // Imagem de fundo
+      backgroundImage: 'url(/carro4.jpg)',
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -54,9 +53,10 @@ const Cadastro = () => {
       textAlign: "center",
       boxShadow: "0 8px 15px rgba(0, 0, 0, 0.3)",
       width: "500px",
+      transition: "width 0.3s ease",
     },
     title: {
-      fontSize: "36px", // Aumentei o tamanho do título
+      fontSize: "36px",
       fontWeight: "bold",
       marginBottom: "20px",
       color: "#b81d1a",
@@ -72,9 +72,9 @@ const Cadastro = () => {
       left: "0",
     },
     inputWrapper: {
-      display: "grid", // Tornando um container de grid
-      gridTemplateColumns: "1fr 1fr", // Definindo duas colunas de igual tamanho
-      gap: "10px", // Espaçamento entre os itens
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: "10px",
       marginBottom: "20px",
       width: "100%",
     },
@@ -119,24 +119,72 @@ const Cadastro = () => {
       border: "none",
       transition: "background-color 0.3s ease, color 0.3s ease",
     },
+    // Responsividade para dispositivos móveis (Mobile)
+    mobile: {
+      box: {
+        width: "90%",
+        padding: "30px 20px",
+      },
+      inputWrapper: {
+        gridTemplateColumns: "1fr",
+      },
+      title: {
+        fontSize: "28px",
+      },
+      input: {
+        fontSize: "14px",
+      },
+      button: {
+        fontSize: "16px",
+      },
+    },
+    // Responsividade para tablets
+    tablet: {
+      box: {
+        width: "80%",
+        padding: "35px 30px",
+      },
+      inputWrapper: {
+        gridTemplateColumns: "1fr 1fr",
+      },
+      title: {
+        fontSize: "32px",
+      },
+      input: {
+        fontSize: "15px",
+      },
+      button: {
+        fontSize: "17px",
+      },
+    },
   };
+
+  // Verificar largura da tela para aplicar estilos responsivos
+  const screenWidth = window.innerWidth;
+
+  let responsiveStyles = {};
+  if (screenWidth <= 600) {
+    responsiveStyles = styles.mobile;
+  } else if (screenWidth <= 900) {
+    responsiveStyles = styles.tablet;
+  }
 
   return (
     <div style={styles.container}>
-      <div style={styles.box}>
-        <h1 style={styles.title}>
+      <div style={{ ...styles.box, ...responsiveStyles.box }}>
+        <h1 style={{ ...styles.title, ...responsiveStyles.title }}>
           Cadastre-se
-          <div style={styles.underline}></div> {/* Linha branca embaixo do título */}
+          <div style={styles.underline}></div>
         </h1>
         <form onSubmit={handleSubmit}>
-          <div style={styles.inputWrapper}>
+          <div style={{ ...styles.inputWrapper, ...responsiveStyles.inputWrapper }}>
             <input
               type="text"
               name="nome"
               placeholder="Nome"
               value={formData.nome}
               onChange={handleChange}
-              style={styles.input}
+              style={{ ...styles.input, ...responsiveStyles.input }}
             />
             <input
               type="text"
@@ -144,7 +192,7 @@ const Cadastro = () => {
               placeholder="Sobrenome"
               value={formData.sobrenome}
               onChange={handleChange}
-              style={styles.input}
+              style={{ ...styles.input, ...responsiveStyles.input }}
             />
             <input
               type="email"
@@ -152,7 +200,7 @@ const Cadastro = () => {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              style={styles.input}
+              style={{ ...styles.input, ...responsiveStyles.input }}
             />
             <input
               type="text"
@@ -160,7 +208,7 @@ const Cadastro = () => {
               placeholder="Número de Telefone"
               value={formData.telefone}
               onChange={handleChange}
-              style={styles.input}
+              style={{ ...styles.input, ...responsiveStyles.input }}
             />
             <input
               type="password"
@@ -168,7 +216,7 @@ const Cadastro = () => {
               placeholder="Senha"
               value={formData.senha}
               onChange={handleChange}
-              style={styles.input}
+              style={{ ...styles.input, ...responsiveStyles.input }}
             />
             <input
               type="password"
@@ -176,7 +224,7 @@ const Cadastro = () => {
               placeholder="Confirmar senha"
               value={formData.confirmarSenha}
               onChange={handleChange}
-              style={styles.input}
+              style={{ ...styles.input, ...responsiveStyles.input }}
             />
           </div>
 
@@ -213,7 +261,7 @@ const Cadastro = () => {
 
           <button
             type="submit"
-            style={{ ...styles.button, ...styles.buttonConfirmar }}
+            style={{ ...styles.button, ...styles.buttonConfirmar, ...responsiveStyles.button }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#b81d1a";
               e.currentTarget.style.color = "#ffffff";
@@ -227,7 +275,7 @@ const Cadastro = () => {
           </button>
         </form>
         <button
-          style={{ ...styles.button, ...styles.buttonHome }}
+          style={{ ...styles.button, ...styles.buttonHome, ...responsiveStyles.button }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = "#333";
           }}

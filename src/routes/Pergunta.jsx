@@ -18,29 +18,30 @@ function Pergunta() {
 
   const styles = {
     container: {
-      minHeight: '100vh', // Garante que a altura mínima do container seja 100% da viewport
-      display: 'grid', // Usando grid layout
-      gridTemplateColumns: '1fr', // Definindo uma coluna única
-      justifyItems: 'center', // Centraliza horizontalmente o conteúdo
-      alignItems: 'center', // Centraliza verticalmente o conteúdo
-      backgroundImage: 'url(/carro5.jpg)', // Caminho para a imagem de fundo
-      backgroundSize: 'cover', // Faz com que a imagem cubra toda a área disponível
-      backgroundPosition: 'center', // Centraliza a imagem de fundo
-      backgroundRepeat: 'no-repeat', // Evita repetição da imagem
-      margin: '0', // Remove margens
-      padding: '0', // Remove padding
+      minHeight: '100vh',
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      justifyItems: 'center',
+      alignItems: 'center',
+      backgroundImage: 'url(/carro5.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      margin: '0',
+      padding: '0',
     },
     box: {
-      display: 'grid', // Usando grid layout para organizar a caixa
-      gridTemplateRows: 'auto auto auto', // Definindo três linhas: para o título e botões
-      gap: '20px', // Espaçamento entre os elementos
-      backgroundColor: 'rgba(255, 255, 255, 0.5)', // Fundo semi-transparente
+      display: 'grid',
+      gridTemplateRows: 'auto auto auto',
+      gap: '20px',
+      backgroundColor: 'rgba(255, 255, 255, 0.5)',
       padding: '40px 60px',
       borderRadius: '15px',
       textAlign: 'center',
       boxShadow: '0 8px 15px rgba(0, 0, 0, 0.3)',
-      width: '300px', // Largura da caixa
-      justifyItems: 'center', // Centraliza os itens dentro da caixa
+      width: '300px',
+      justifyItems: 'center',
+      transition: 'width 0.3s ease',
     },
     title: {
       fontSize: '24px',
@@ -74,14 +75,52 @@ function Pergunta() {
       color: '#ffffff',
       border: 'none',
     },
+    // Estilos responsivos para mobile e tablet
+    mobile: {
+      box: {
+        width: '250px', // Ajuste de largura para telas menores
+        padding: '30px 40px', // Reduzindo o padding
+      },
+      title: {
+        fontSize: '20px',
+      },
+      button: {
+        fontSize: '16px',
+        padding: '8px',
+      },
+    },
+    tablet: {
+      box: {
+        width: '280px',
+      },
+      title: {
+        fontSize: '22px',
+      },
+      button: {
+        fontSize: '17px',
+      },
+    },
   };
+
+  // Definindo largura da tela
+  const screenWidth = window.innerWidth;
+
+  // Aplicar estilos responsivos
+  let responsiveStyles = {};
+  if (screenWidth <= 600) {
+    responsiveStyles = styles.mobile;
+  } else if (screenWidth <= 900) {
+    responsiveStyles = styles.tablet;
+  }
 
   return (
     <div style={styles.container}>
-      <div style={styles.box}>
-        <h1 style={styles.title}>Já possui uma conta?</h1>
+      <div style={{ ...styles.box, ...responsiveStyles.box }}>
+        <h1 style={{ ...styles.title, ...responsiveStyles.title }}>
+          Já possui uma conta?
+        </h1>
         <button
-          style={{ ...styles.button, ...styles.buttonSim }}
+          style={{ ...styles.button, ...styles.buttonSim, ...responsiveStyles.button }}
           onClick={handleSimClick}
           onMouseOver={(e) => {
             e.currentTarget.style.backgroundColor = '#b81d1a';
@@ -95,7 +134,7 @@ function Pergunta() {
           Sim
         </button>
         <button
-          style={{ ...styles.button, ...styles.buttonNao }}
+          style={{ ...styles.button, ...styles.buttonNao, ...responsiveStyles.button }}
           onClick={handleNaoClick}
           onMouseOver={(e) => {
             e.currentTarget.style.backgroundColor = '#b81d1a';
@@ -109,7 +148,7 @@ function Pergunta() {
           Não
         </button>
         <button
-          style={{ ...styles.button, ...styles.buttonHome }}
+          style={{ ...styles.button, ...styles.buttonHome, ...responsiveStyles.button }}
           onClick={handleHomeClick}
           onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#333')}
           onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#111111')}

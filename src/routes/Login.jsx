@@ -39,9 +39,9 @@ const Login = () => {
         container: {
             height: '100vh',
             width: '100vw',
-            display: 'grid', // Usando CSS Grid
-            placeItems: 'center', // Centraliza horizontal e verticalmente
-            backgroundImage: 'url(/carro3.jpg)', // Caminho para a imagem de fundo
+            display: 'grid',
+            placeItems: 'center',
+            backgroundImage: 'url(/carro3.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -49,20 +49,21 @@ const Login = () => {
             padding: '0',
         },
         box: {
-            display: 'grid', // Usando CSS Grid para organizar os elementos dentro da caixa
-            gridTemplateColumns: '1fr', // Definindo uma coluna principal
-            gap: '10px', // Reduzindo o espaçamento entre os elementos
-            backgroundColor: 'rgba(255, 255, 255, 0.5)', // Fundo semi-transparente
-            padding: '30px 40px', // Diminuindo o padding
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '10px',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            padding: '30px 40px',
             borderRadius: '15px',
             textAlign: 'center',
             boxShadow: '0 8px 15px rgba(0, 0, 0, 0.3)',
-            width: '300px', // Largura da caixa
+            width: '300px',
+            transition: 'width 0.3s ease',
         },
         title: {
-            fontSize: '28px', // Diminuindo o tamanho do título
+            fontSize: '28px',
             fontWeight: 'bold',
-            marginBottom: '10px', // Reduzindo a margem inferior
+            marginBottom: '10px',
             color: '#b81d1a',
             fontFamily: '"Gruppo", sans-serif',
             position: 'relative',
@@ -78,16 +79,16 @@ const Login = () => {
         inputWrapper: {
             display: 'flex',
             alignItems: 'center',
-            marginBottom: '15px', // Reduzindo o espaçamento entre inputs
+            marginBottom: '15px',
             borderRadius: '20px',
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
-            padding: '8px 12px', // Reduzindo o padding nos inputs
+            padding: '8px 12px',
         },
         input: {
             flex: '1',
             border: 'none',
             outline: 'none',
-            fontSize: '14px', // Diminuindo a fonte dos inputs
+            fontSize: '14px',
             backgroundColor: 'transparent',
             color: '#ffffff',
             marginLeft: '10px',
@@ -97,9 +98,9 @@ const Login = () => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            color: '#b81d1a', // Alterei a cor do texto para vermelho
+            color: '#b81d1a',
             fontSize: '14px',
-            marginBottom: '10px', // Reduzindo o espaçamento entre o checkbox e o botão
+            marginBottom: '10px',
         },
         checkbox: {
             display: 'flex',
@@ -109,11 +110,11 @@ const Login = () => {
             marginLeft: '5px',
         },
         button: {
-            display: 'block', // Garantir que cada botão ocupe seu próprio espaço
-            width: '100%', // Largura de 100% dentro do contêiner pai
+            display: 'block',
+            width: '100%',
             padding: '10px',
-            fontSize: '16px', // Diminuindo a fonte dos botões
-            margin: '8px 0', // Reduzindo o espaçamento entre os botões
+            fontSize: '16px',
+            margin: '8px 0',
             border: 'none',
             borderRadius: '20px',
             cursor: 'pointer',
@@ -132,37 +133,76 @@ const Login = () => {
             border: 'none',
             transition: 'background-color 0.3s ease, color 0.3s ease',
         },
+        // Responsividade para mobile
+        mobile: {
+            box: {
+                width: '250px',
+                padding: '20px 30px',
+            },
+            title: {
+                fontSize: '24px',
+            },
+            input: {
+                fontSize: '12px',
+            },
+            button: {
+                fontSize: '14px',
+            },
+        },
+        // Responsividade para tablet
+        tablet: {
+            box: {
+                width: '280px',
+                padding: '25px 35px',
+            },
+            title: {
+                fontSize: '26px',
+            },
+            input: {
+                fontSize: '13px',
+            },
+            button: {
+                fontSize: '15px',
+            },
+        },
     };
+
+    // Verificar largura da tela para aplicar estilos responsivos
+    const screenWidth = window.innerWidth;
+
+    let responsiveStyles = {};
+    if (screenWidth <= 600) {
+        responsiveStyles = styles.mobile;
+    } else if (screenWidth <= 900) {
+        responsiveStyles = styles.tablet;
+    }
 
     return (
         <div style={styles.container}>
-            <div style={styles.box}>
-                <h1 style={styles.title}>
+            <div style={{ ...styles.box, ...responsiveStyles.box }}>
+                <h1 style={{ ...styles.title, ...responsiveStyles.title }}>
                     Login
-                    <div style={styles.underline}></div> {/* Linha branca embaixo do título */}
+                    <div style={styles.underline}></div>
                 </h1>
 
-                {/* Campo de Usuário */}
                 <div style={styles.inputWrapper}>
                     <input
                         type="text"
                         placeholder="Email"
                         ref={usuario}
-                        style={styles.input}
+                        style={{ ...styles.input, ...responsiveStyles.input }}
                     />
                 </div>
 
-                {/* Campo de Senha */}
                 <div style={styles.inputWrapper}>
                     <input
                         type="password"
                         placeholder="Senha"
                         ref={senha}
-                        style={styles.input}
+                        style={{ ...styles.input, ...responsiveStyles.input }}
                     />
                 </div>
 
-                {/* Lembrar senha e Esqueci a senha */}
                 <div style={styles.checkboxWrapper}>
                     <div style={styles.checkbox}>
                         <input type="checkbox" />
@@ -171,9 +211,8 @@ const Login = () => {
                     <span>Esqueci Minha Senha</span>
                 </div>
 
-                {/* Botão de Login */}
                 <button
-                    style={{ ...styles.button, ...styles.buttonLogin }}
+                    style={{ ...styles.button, ...styles.buttonLogin, ...responsiveStyles.button }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = '#b81d1a';
                         e.currentTarget.style.color = '#ffffff';
@@ -187,9 +226,8 @@ const Login = () => {
                     Login
                 </button>
 
-                {/* Botão Home */}
                 <button
-                    style={{ ...styles.button, ...styles.buttonHome }}
+                    style={{ ...styles.button, ...styles.buttonHome, ...responsiveStyles.button }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = '#333';
                     }}
