@@ -24,9 +24,28 @@ const Cadastro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (formData.senha !== formData.confirmarSenha) {
+        alert("As senhas não coincidem!");
+        return;
+    }
+
+    // Salvando os dados do usuário no localStorage
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const novoUsuario = {
+        nome: formData.nome,
+        sobrenome: formData.sobrenome,
+        email: formData.email,
+        telefone: formData.telefone,
+        senha: formData.senha,
+        genero: formData.genero,
+    };
+    localStorage.setItem("usuarios", JSON.stringify([...usuarios, novoUsuario]));
+
     alert("Cadastro realizado com sucesso!");
-    navigate("/dashboard");
-  };
+    navigate("/");
+};
+
 
   const handleHomeClick = () => {
     navigate("/");

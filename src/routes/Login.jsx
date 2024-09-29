@@ -8,13 +8,15 @@ const Login = () => {
     const navigate = useNavigate();
 
     function validar() {
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
         for (let i = 0; i < usuarios.length; i++) {
             if (
-                usuarios[i].usuario === usuario.current.value &&
+                usuarios[i].email === usuario.current.value &&
                 usuarios[i].senha === senha.current.value
-            )
+            ){
                 return true;
-        }
+             }
+            } return false;
     }
 
     const handleSubmit = (e) => {
@@ -23,7 +25,8 @@ const Login = () => {
             let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
             sessionStorage.setItem("usuario", usuario.current.value);
             sessionStorage.setItem("senha", token);
-            navigate("/dashboard");
+            navigate("/");
+            alert("Logado com sucesso!")
         } else {
             alert("Usuário ou senha inválidos");
         }
